@@ -1,0 +1,55 @@
+search_linkedin_task:
+  description: >
+    Search for and collect information on Pharmacy Technicians in the United States using LinkedIn.
+    Focus on finding candidates with relevant certifications (PTCB or ExCPT) and experience in pharmacy settings.
+    For each candidate, extract their name, position, location, profile link, and other visible information.
+   
+    Search criteria:
+    {criteria}
+  expected_output: >
+    A detailed list of Pharmacy Technician candidates with their basic profile information.
+    Store all candidate data in the PostgreSQL database for later analysis.
+
+analyze_candidates_task:
+  description: >
+    Analyze the Pharmacy Technician profiles collected from LinkedIn and extract the following key information:
+    - Years of experience in pharmacy settings
+    - Professional certifications (CPhT, PTCB, ExCPT, etc.)
+    - Technical skills related to pharmacy work
+    - Current and previous workplaces
+   
+    Score each candidate on a scale of 1-10 based on:
+    - Relevant pharmacy experience (0-3 points)
+    - Valid pharmacy certifications (0-3 points)
+    - Technical pharmacy skills (0-2 points)
+    - Location within the US (0-2 points)
+  expected_output: >
+    A scored and ranked list of Pharmacy Technician candidates with detailed analysis of their qualifications.
+    Update the database with the detailed information and scores for each candidate.
+
+develop_outreach_strategy_task:
+  description: >
+    Develop personalized outreach strategies for the top-ranked Pharmacy Technician candidates.
+    Create tailored message templates that highlight:
+    - Specific aspects of their experience that make them suitable
+    - How their certifications align with job requirements
+    - Potential career advancement opportunities
+   
+    Consider industry-specific channels and approaches that would resonate with pharmacy professionals.
+  expected_output: >
+    A set of personalized outreach strategies and message templates for the top candidates,
+    with specific recommendations on communication channels and timing.
+
+generate_report_task:
+  description: >
+    Generate a comprehensive report on the Pharmacy Technician talent pool identified.
+    Include:
+    - Summary statistics on candidate qualifications and locations
+    - Detailed profiles of the top 10 candidates
+    - Analysis of certification trends and experience levels
+    - Recommended outreach approaches
+   
+    Format the report in a clear, professional manner suitable for healthcare recruiters.
+  expected_output: >
+    A detailed recruitment report on Pharmacy Technician candidates formatted as markdown,
+    including profiles, qualification analysis, and recommended next steps.
