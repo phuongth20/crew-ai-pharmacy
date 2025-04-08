@@ -1,4 +1,4 @@
-from crewai_tools import BaseTool
+from crewai.tools import BaseTool
 from .client import Client as LinkedinClient
 from .database import Database
 import re

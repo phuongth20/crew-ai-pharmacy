@@ -1,6 +1,5 @@
-from crewai_tools import BaseTool
+from crewai.tools import BaseTool
 from .database import Database
-
 class DatabaseTool(BaseTool):
     name: str = "Database Management Tool"
     description: str = (
