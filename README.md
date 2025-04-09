@@ -55,6 +55,9 @@ Bạn có thể cài đặt PostgreSQL trực tiếp trên máy hoặc sử dụ
 Tạo file `.env` trong thư mục gốc của dự án:
 
 ```
+# OPENAI
+OPENAI_API_KEY=openai_api_value
+
 # LinkedIn
 LINKEDIN_COOKIE=your_linkedin_cookie_value
 
@@ -78,34 +81,15 @@ API_PORT=8000
 
 ### 4. Chạy hệ thống
 
-#### Sử dụng Python trực tiếp:
-
-```bash
-# Chạy ứng dụng chính để thu thập dữ liệu
-python main.py
-
 # Khởi động API server
-python api_server.py
+python main.py
 ```
 
-#### Hoặc sử dụng Docker Compose:
-
-```bash
-docker-compose up -d
-```
 
 ## Hướng dẫn sử dụng
 
 ### 1. Thu thập dữ liệu từ LinkedIn
-
-Để bắt đầu thu thập dữ liệu, bạn có thể:
-
-- Chạy ứng dụng trực tiếp:
-```bash
-python main.py
-```
-
-- Hoặc gọi API endpoint:
+-  Gọi API endpoint:
 ```bash
 curl -X POST http://localhost:8000/api/search -H "Content-Type: application/json" -d '{"criteria": "Pharmacy Technician, California"}'
 ```
@@ -157,8 +141,7 @@ pharmacy_linkedin_agent/
 │   ├── crew.py              # Định nghĩa CrewAI
 │   └── api.py               # API endpoints
 ├── .env                     # Biến môi trường
-├── main.py                  # Điểm khởi chạy chính
-├── api_server.py            # Máy chủ API
+├── main.py                  # Máy chủ API
 ├── docker-compose.yml       # Cấu hình Docker
 └── Dockerfile               # Cấu hình Docker
 ```
